@@ -1,0 +1,612 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
+/* BODY */
+body,
+#__next {
+  @apply h-full max-w-full min-h-screen p-0 m-0 overflow-x-hidden text-white bg-purple-darker;
+}
+main {
+  @apply w-full min-h-screen overflow-y-hidden;
+}
+
+/* TYPOGRAPHY */
+
+p {
+  font-family: "Lato", sans-serif;
+  @apply text-lg font-medium leading-8;
+}
+
+h1,
+.unlock-page_title {
+  @apply text-3xl font-bold text-center md:text-left;
+}
+
+h3 {
+  @apply text-2xl font-bold;
+}
+
+label > span {
+  @apply block mb-1 font-semibold leading-4;
+}
+
+hr {
+  @apply w-40 mt-2 border-b-2 border-purple;
+}
+
+.btn {
+  @apply w-full text-base font-bold;
+  font-family: "Lato", sans-serif;
+}
+
+/* NAVIGATION */
+nav {
+  @apply flex relative flex-col gap-[2rem] justify-center md:flex-row items-center md:justify-between px-5 py-5 md:py-8 md:px-[7.5rem] z-[1000];
+}
+
+/* INPUT */
+.input-container {
+  @apply relative flex flex-col w-full gap-3 font-sans;
+}
+input {
+  @apply w-full px-5 py-3 font-medium transition-all duration-300 border border-none rounded outline-none h-14 bg-gray-darker;
+}
+
+.input-with-select {
+  @apply relative w-full;
+}
+
+.input-wrapper {
+  @apply flex flex-row items-center justify-center rounded outline-none bg-gray-darker;
+}
+
+.option {
+  @apply h-12 p-10;
+}
+
+/* CHECKBOX */
+.lboard-checkbox-container {
+  @apply flex items-center gap-2 cursor-pointer;
+}
+.lboard-checkbox-box {
+  @apply p-1 rounded-lg cursor-pointer w-7 h-7 bg-purple;
+}
+/* CHECKBOX GROUP */
+.lboard-checkbox-group {
+  @apply flex flex-col items-start w-full gap-3;
+}
+
+/* BUTTONS */
+.btn {
+  @apply inline-flex items-center justify-center h-12 gap-2 px-4 py-3 font-bold;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+}
+.btn.small {
+  @apply h-10 p-2 text-sm;
+}
+.btn.round {
+  @apply z-10 grid w-12 h-12 rounded-full bg-purple-darkest place-content-center md:h-[3.75rem] md:w-[3.75rem] md:text-2xl;
+}
+.btn.round.active {
+  @apply bg-purple;
+}
+.btn.filled,
+.btn-primary {
+  @apply text-white;
+  background-color: #2e52b5;
+  background-size: 200% auto;
+  transition: 0.5s;
+  border: none !important;
+}
+.btn.filled:hover,
+.btn-primary:hover {
+  background-position: bottom right;
+}
+.btn.filled:disabled {
+  @apply opacity-90;
+  background-color: #2f273a;
+  background-image: none;
+}
+.btn.outline {
+  @apply border-2 outline-none text-purple border-purple;
+}
+.btn.text {
+  @apply border-none text-gray-light;
+}
+.token-picker {
+  @apply relative flex items-center justify-center gap-10;
+}
+
+.token-picker__line {
+  background-image: linear-gradient(120deg, #8e2de2 0%, #4a00e0 99%);
+  @apply absolute w-full h-2 rounded;
+}
+
+.token-picker__button {
+  @apply z-10 text-sm font-semibold border-2 rounded-full w-36 h-11 text-purple border-purple bg-purple-darker;
+}
+
+.token-picker__button.active {
+  @apply text-white bg-purple;
+}
+.token-picker__limited {
+  @apply relative z-10 grid place-content-center;
+}
+.token-picker__limited > span {
+  @apply absolute top-[-1.5rem] left-[-0.5rem] text-xs bg-purple-darkest z-[100] px-3 py-2 rounded-full text-purple flex items-center justify-center w-[10rem];
+}
+.address-buttons {
+  @apply flex flex-col gap-8 md:flex-row;
+}
+
+.account-button__address {
+  @apply relative grid h-12 px-5 py-4 rounded bg-purple-darkest place-content-center;
+}
+
+.account-button__tag {
+  @apply px-3 py-1.5 text-sm bg-purple mx-auto font-bold rounded text-white grid place-content-center;
+}
+
+.account-button__tag-container {
+  @apply absolute w-full px-2 bottom-10;
+}
+
+/* WALLETS DROPDOWN */
+.wallets-dropdown {
+  @apply absolute top-12 right-0 z-[100] bg-purple-darker flex flex-col gap-5 rounded-b w-full;
+  box-shadow: 0px 1px 2px 0px #0000000d;
+}
+
+/* CONTAINER OVERRIDE */
+.container {
+  @apply px-5 pt-5 pb-20 md:pb-40 max-w-none md:py-8 md:px-[7.5rem] flex flex-col gap-5 z-[100] relative;
+}
+
+.row {
+  @apply flex w-full gap-3;
+}
+
+.col {
+  @apply flex flex-col w-full gap-2;
+}
+
+.rewards-container {
+  @apply flex flex-col items-center justify-center gap-5;
+}
+.rewards-container > label {
+  @apply mb-5 max-w-[20rem];
+}
+
+.rewards-container > h2 {
+  @apply text-xl font-bold;
+}
+.rewards-list {
+  @apply flex flex-col gap-3;
+}
+.rewards-list > li {
+  @apply flex items-center gap-2;
+}
+
+/* CARDS */
+.plan-card {
+  @apply w-[12.5rem] h-[22rem] flex flex-col gap-5 items-center justify-center p-5 bg-purple-light rounded relative;
+}
+.plan-card > h2 {
+  @apply text-2xl font-bold leading-6;
+}
+.plan-card__days,
+.plan-card__apr {
+  @apply flex items-center gap-2 text-base font-medium;
+}
+.plan-card__bosted {
+  @apply text-left;
+}
+.plan-card > .check-mark {
+  @apply absolute -top-3 -right-3;
+}
+.plan-card > ul {
+  @apply flex flex-col gap-3;
+}
+.plan-card__staked-info {
+  @apply flex items-center justify-center gap-2 text-[12px] text-purple;
+}
+.plan-card.active {
+  @apply border-2 border-purple;
+}
+.plan-card.boosted {
+  @apply bg-gradient-to-r from-purple-light to-purple-dark;
+}
+
+.stake-card {
+  @apply rounded flex gap-5 border-purple border h-[20rem];
+}
+
+.stake-card__hero {
+  @apply flex flex-col gap-4 relative min-w-[6.875rem] justify-center items-center;
+}
+
+.stake-card__hero > h2 {
+  @apply text-xl font-bold leading-6;
+}
+
+.stake-card__hero > img {
+  @apply absolute h-full z-[-1];
+  filter: blur(1px);
+}
+
+.stake-card__body {
+  @apply flex flex-col items-start gap-3 p-5;
+}
+.stake-card__body > ul {
+  @apply flex flex-col items-start gap-2 text-base font-bold;
+}
+.stake-card__body > ul > li {
+  @apply flex items-center gap-2;
+}
+.stake-card__body > .relative {
+  @apply mt-auto;
+}
+
+.stake-card__hero > span,
+.stake-card__body > span {
+  @apply text-base font-semibold;
+}
+
+.stake-card__actions {
+  @apply flex flex-col items-center justify-center gap-2 mt-4;
+}
+
+.plan-grid {
+  @apply relative h-60 md:h-full;
+}
+
+.plan-grid__content {
+  @apply absolute flex gap-5 md:relative md:items-center md:grid md:justify-center md:grid-rows-2 md:grid-cols-3;
+  /* // absolute flex gap-5 md:grid md:items-center md:justify-center md:grid-rows-2 md:grid-cols-3; */
+}
+
+/* CAROUSEL */
+.lboard-carousel-section {
+  @apply flex justify-center py-12 w-screen md:max-w-[57.5rem] relative overflow-hidden;
+}
+.lboard-carousel-navigation-container {
+  @apply flex flex-row;
+}
+.lboard-carousel-navigation {
+  @apply flex-row items-center justify-center w-12 h-12 transition-all duration-300 ease-linear bg-purple rounded hidden md:flex absolute top-[3.75rem] z-10;
+}
+.lboard-carousel-navigation:hover {
+  @apply text-white bg-purple;
+}
+.lboard-carousel-navigation:first-child {
+  @apply mr-2;
+}
+.lboard-carousel-navigation:disabled {
+  @apply bg-gray-darker;
+}
+.lboard-carousel {
+  @apply w-full;
+}
+
+nav {
+  @apply relative flex items-center justify-between px-5 py-5 md:py-8 md:px-[7.5rem] z-[1000] flex-row;
+}
+
+.mobile-menu {
+  @apply w-screen h-screen md:hidden bg-purple-darker left-0 top-[4.5rem] transform translate-x-full absolute justify-center grid pt-32;
+  height: calc(100vh - 72px);
+}
+
+/* MODAL */
+.lboard-modal {
+  @apply w-screen h-screen overflow-hidden bg-purple-transparent z-[1000] absolute top-0 left-0 grid place-content-center;
+}
+.lboard-modal__content {
+  @apply w-[22.5rem] rounded bg-purple-darker;
+}
+.lboard-modal__content > h3 {
+  @apply text-xl font-bold text-white;
+}
+.lboard-modal__content > p {
+  @apply text-base text-white;
+}
+.sign-transactions-modal > .lboard-modal__content {
+  @apply flex flex-col gap-3 p-5 text-center rounded;
+}
+.unlock-tokens-modal > .lboard-modal__content {
+  @apply flex flex-col w-[400px] gap-5 text-center rounded;
+}
+.unlock-tokens-modal h1 {
+  @apply p-5 pb-0;
+}
+.unlock-tokens-modal ul {
+  @apply flex flex-col !gap-5;
+}
+
+.lboard-modal__body > ul {
+  @apply flex flex-col gap-3 p-5;
+}
+
+.lboard-modal__body > ul > li {
+  @apply flex items-center justify-between overflow-y-hidden;
+}
+.lboard-modal__label {
+  @apply flex items-center gap-2 text-left;
+}
+.lboard-modal__header {
+  @apply h-[8.75rem] relative flex flex-col items-center justify-center gap-3;
+}
+.lboard-modal__header > img {
+  @apply absolute h-[8.75rem] w-full;
+  filter: blur(1px);
+}
+.lboard-modal__header > h2,
+.lboard-modal__header > svg {
+  @apply z-10 text-2xl font-bold leading-6;
+}
+
+.lboard-modal__actions {
+  @apply flex flex-col gap-5 px-5 my-5;
+}
+/* SCROLLBAR */
+body::-webkit-scrollbar {
+  @apply hidden w-3 cursor-pointer md:flex;
+}
+body::-webkit-scrollbar-thumb {
+  @apply rounded bg-purple;
+}
+body::-webkit-scrollbar-thumb:hover {
+  @apply bg-opacity-90;
+}
+
+/* TEXT SELECTION */
+::-moz-selection {
+  @apply text-white bg-purple;
+}
+::selection {
+  @apply text-white bg-purple;
+}
+
+/* DAPP UI OVERRIDES */
+.unlock-page_card,
+.modal-card,
+.card {
+  @apply p-5 rounded;
+  background: #14073b !important;
+}
+.modal-content > .dapp-core-ui-component > .modal-card_wrapper {
+  @apply flex flex-col gap-5 p-5 rounded bg-purple-darkest;
+}
+.unlock-page_cardBody {
+  @apply flex flex-col items-center justify-center w-full;
+}
+.dapp-core-ui-component,
+.btn-primary {
+  @apply w-full mb-2;
+}
+.modal-container {
+  @apply grid h-full px-5 place-content-center;
+}
+.modal-content {
+  @apply grid place-content-center;
+}
+.card-title {
+  @apply w-full;
+}
+.card-title > div {
+  @apply flex items-center justify-between w-full;
+}
+.unlock-page_cardContainer {
+  @apply grid place-content-center;
+}
+.modal-card {
+  @apply py-0;
+}
+.wallect-connect-login_title {
+  @apply my-4;
+}
+.unlock-page_description {
+  @apply mb-5;
+}
+.wallect-connect-login,
+.ledger-login {
+  @apply absolute z-[1000] top-40;
+}
+.card-body {
+  @apply flex flex-col items-center justify-center w-full gap-4;
+}
+.justify-content-center {
+  @apply mb-5;
+}
+.wallect-connect-login_leadText {
+  @apply hidden;
+}
+.wallect-connect-login_mobileLoginButton {
+  display: grid !important;
+}
+.wallect-connect-login_mobileLoginButton > svg {
+  @apply hidden;
+}
+.modal-container {
+  @apply absolute top-0 left-0 w-screen h-screen z-[1000];
+}
+.modal-backdrop.show {
+  @apply absolute top-0 left-0 w-screen h-screen transition-colors duration-300 bg-purple bg-opacity-40 z-[100];
+}
+.modal-dialog {
+  @apply mt-40;
+}
+.page-state_wrapper {
+  @apply flex flex-col items-center justify-center w-full gap-5;
+}
+.tiny-label {
+  @apply mt-[-12px] text-sm font-bold flex flex-col gap-1;
+}
+.tiny-label > span > a {
+  @apply text-purple;
+  text-decoration: underline !important;
+}
+
+.home__form {
+  @apply flex flex-col items-center justify-center gap-5 max-w-[20.9375rem] w-full;
+}
+
+.home__form > .relative {
+  @apply mt-4;
+}
+
+.stake-container {
+  @apply flex flex-col items-center gap-5 mb-10;
+}
+
+.home__form--balance {
+  @apply ml-auto -mt-2 text-sm;
+}
+.home__form--info {
+  @apply flex w-full gap-2 p-2 border rounded border-purple text-purple;
+}
+.home__form--info > span {
+  @apply text-sm font-medium w-[16.875rem];
+}
+
+.home__title {
+  @apply flex flex-col gap-3 mb-5 text-center;
+}
+.home__title > h1 {
+  @apply text-center;
+}
+
+.mobile-size {
+  @apply mx-auto mt-8 w-60;
+}
+
+.lboard-notification {
+  @apply flex w-full max-w-md mt-5 rounded-lg pointer-events-auto bg-purple-darkest ring-1 ring-black ring-opacity-5;
+}
+.lboard-notification__value {
+  @apply absolute top-[-20px] bg-purple px-2 py-1 rounded-full;
+}
+
+.loading-spinner {
+  @apply inline mr-2 w-8 h-8 text-gray animate-spin fill-[purple];
+}
+
+.swap-container {
+  @apply flex flex-col items-center;
+}
+
+.swap-container > .header {
+  @apply mb-8;
+}
+
+.header {
+  @apply flex flex-col items-center text-center;
+}
+.header > p {
+  @apply mt-2 text-sm;
+}
+
+.swap-container h2 {
+  @apply mt-10 mb-5 text-2xl font-bold;
+}
+.swap-card {
+  @apply p-8 w-[400px]  bg-gray drop-shadow-md py-10  md:w-full;
+}
+.swap-card-actions {
+  @apply flex items-end w-full gap-3;
+}
+.swap-card-actions > .input-container {
+  @apply w-1/4;
+}
+.swap-card-actions button {
+  @apply !text-white;
+}
+.swap-card-actions > input {
+  @apply appearance-none;
+}
+
+.swap-container form {
+  @apply flex flex-col items-center justify-center gap-2;
+}
+
+.select-button {
+  @apply flex bg-purple-darkest z-[100] px-5 py-3 rounded border-2 border-purple focus:bg-purple-light items-center justify-between w-full;
+}
+
+.select-option {
+  @apply flex items-center justify-between px-5 py-3 cursor-pointer bg-gray-darker hover:bg-purple-light;
+}
+
+.absolute-select {
+  @apply absolute bottom-[6px] right-0.5 w-[50%] border-l border-purple;
+}
+.absolute-select > img {
+  @apply absolute border-2 bottom-2 right-20 border-purple;
+}
+
+.balance-wrapper {
+  @apply flex flex-row justify-between w-full px-1;
+}
+
+.token-price {
+  @apply !mt-[-1.3rem] text-xs text-gray-light z-20 pl-5;
+}
+
+.offsetted-container input {
+  @apply pb-6;
+}
+.small-text {
+  @apply text-xs text-gray-light;
+}
+
+.small-test > span {
+  @apply text-white;
+}
+
+.amount-wrapper {
+  @apply flex flex-col w-full border-purple;
+}
+
+.amount-wrapper > p {
+  @apply mt-2;
+}
+
+.progress {
+  @apply absolute h-[46px] left-0 bottom-0 bg-purple z-[-1] transition-all duration-500;
+}
+
+.event-wrapper {
+  @apply flex flex-col gap-2;
+}
+
+#balance-land {
+  @apply flex items-end w-full px-1 text-left;
+}
+
+.maintenance-wrapper {
+  @apply flex flex-col items-center w-full;
+}
+
+.maintenance-wrapper > svg {
+  @apply w-1/2;
+}
+.maintenance-wrapper > p > a {
+  @apply text-purple;
+}
+
+.rc-tooltip-inner {
+  @apply !bg-purple-darkest !text-white !border-none !rounded !p-3;
+}
+
+.tooltip-title {
+  @apply mb-2 text-sm font-bold;
+}
