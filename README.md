@@ -16,7 +16,7 @@ directly with their EGLD.
 
 Therefore, I've worked on developing a DEX interface to interact with the Maiar Exchange contracts, allowing people to swap any token listed on MEX for LAND.
 
-[First implementation](https://user-images.githubusercontent.com/77828455/194394963-dbf4f404-d6ba-4ad9-8d2e-bdcf9bf2c7c1.png)
+![image](https://user-images.githubusercontent.com/77828455/194397280-cabb9296-c441-4535-9446-709b9125f4c7.png)
 
 Ideally, anyone should be able to use the widget in apps - web3 or not 
 (can implement Elrond auth just for the widget or integrate with existing auth),
