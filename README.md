@@ -1,70 +1,48 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Maiar Exchange Widget
 
-## Available Scripts
+A widget for easily implementing Maiar Exchange swaps into any website.
 
-In the project directory, you can run:
+---
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Currently under development, not usable yet. Inspired by [Uniswap Widget](https://docs.uniswap.org/sdk/widgets/swap-widget).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Abstract
 
-### `npm test`
+Working on the [Landboard app](https://app.landboard.io/), we needed people to have an
+easy way to directly mint our NFTs (which are only mintable with LAND, our native token),
+directly with their EGLD.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Therefore, I've worked on developing a DEX interface to interact with the Maiar Exchange contracts, allowing people to swap any token listed on MEX for LAND.
 
-### `npm run build`
+[First implementation](https://user-images.githubusercontent.com/77828455/194394963-dbf4f404-d6ba-4ad9-8d2e-bdcf9bf2c7c1.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ideally, anyone should be able to use the widget in apps - web3 or not 
+(can implement Elrond auth just for the widget or integrate with existing auth),
+allowing anyone to swap tokens on the Elrond blockchain without leaving the website. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Current implementation is very hacky - especially the route calculations - 
+which will be improved as development continues. 
+## Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To deploy this project run
 
-### `npm run eject`
+```bash
+  npm run deploy
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage/Examples
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```javascript
+import Component from 'my-project'
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+function App() {
+  return <Component />
+}
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+Contributions are 100% welcome and needed. If you're willing to join this project, please reach out to me [via Telegram](https://t.me/lucasmanea)!
